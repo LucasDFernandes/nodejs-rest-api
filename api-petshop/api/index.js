@@ -1,6 +1,10 @@
-const express = require('express');
-const app = express();
+const express = require('express')
+const bodyParser = require('body-parser')
+const config = require('config')
 
-app.listen(3000, () => {
+const app = express()
+app.use(bodyParser.json())
+
+app.listen(config.get('api.porta'), () => {
     console.log('api rodando')
 })
